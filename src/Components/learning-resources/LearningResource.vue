@@ -1,49 +1,55 @@
 <template>
-  <div>
-    <stored-resources></stored-resources>
-  </div>
+  <li>
+    <div>
+      <header>
+      <h3>{{ title}}</h3>
+      <button>Delete</button>
+      </header>
+    </div>
+    <p>{{ description}}</p>
+    <nav>
+      <a :href="link">View Resource</a>
+    </nav>
+  </li>
 </template>
 
 <script>
-  import StoredResources from './Components/learning-resources/StoredResources.vue';
-
-  export default {
-    components: {
-        StoredResources
-    },
-    data(){
-      return {
-        resources: [
-          {
-            id: 'official-guide',
-            title: 'Offical Guide',
-            description: 'The official Vue JS Documentation',
-            link: 'https://vuejs.org'
-          },
-          {
-            id: 'google',
-            title: 'Google',
-            description: 'Google',
-            link: 'www.google.com'
-          }
-        ]
-      };
-    }
-  }
+export default {
+    props: [
+      'title',
+      'description',
+      'link']
+}
 </script>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-  * {
-    box-sizing: border-box;
+<style scoped>
+  li {
+    margin: auto;
+    max-width: 40rem;
   }
 
-  html {
-    font-family: 'Roboto', sans-serif;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  body {
-    margin: 0;
+  h3 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ce5c00;
+  }
+
+  a:hover,
+  a:active {
+    color: #c89300;
   }
 </style>
