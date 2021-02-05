@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import LearningResource from './omponents/learning-resources/LearningResource.vue';
+    import LearningResource from './Components/learning-resources/LearningResource.vue';
 
     export default {
      components: {
